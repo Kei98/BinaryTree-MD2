@@ -4,6 +4,9 @@ package data;
  *
  * @author CyK
  */
+
+//Node Class for the BinaryTreeSimple
+
 public class NodeSimple {
     private String actividad;
     private NodeSimple left;

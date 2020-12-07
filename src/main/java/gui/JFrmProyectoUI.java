@@ -27,6 +27,7 @@ public class JFrmProyectoUI extends javax.swing.JFrame {
         initComponents();
         JListActividades.setModel(listModel);
         JSpnPrioridad.setModel(numModel);
+        JSpnPrioridad.getEditor().setBackground(Color.DARK_GRAY);
         tree = new BinaryTree();
     }
     
