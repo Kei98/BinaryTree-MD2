@@ -237,7 +237,6 @@ public class JFrmProyectoUI extends javax.swing.JFrame {
             String [] values = Originalvalue.split("\\|");
             String valueAct = values[0].trim();
             int valuePrio = Integer.parseInt(String.valueOf(values[1].trim().charAt(11)));
-            System.out.println(valueAct + " PRIO " + valuePrio);
             if(tree.deleteNode(valueAct, valuePrio)) {
                 listModel.removeElement(Originalvalue);
             }else{

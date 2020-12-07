@@ -158,15 +158,12 @@ public class BinaryTreeSimple {
      * @return 
      */
     public boolean search(String actividad) {
-        System.out.println("search 2 " +actividad);
         //Call search recursive method
         NodeSimple node = search(this.root, actividad.replaceAll("\\s", "").toUpperCase());
         if (node != null) {
-            System.out.println("Encontró el nodo SIMPLE");
             return true;
         }
         else {
-            System.out.println("nodo SIMPLE: NULO");
             return false;
         }
     }
@@ -178,9 +175,7 @@ public class BinaryTreeSimple {
      * @return 
      */
     private NodeSimple search(NodeSimple current, String actividad) {
-        System.out.println("Search 2 SIMPLE: " + actividad);
         if(current != null){
-            System.out.println(current.getActividad());
         }
         if (current == null || current.getActividad().compareTo(actividad) == 0) {
             return current;

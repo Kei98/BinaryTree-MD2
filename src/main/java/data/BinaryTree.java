@@ -40,12 +40,9 @@ public class BinaryTree {
     public boolean deleteNode(String actividad, int prioridad) {
         //Verify if the node exists
         if(search(actividad, prioridad)){
-            System.out.println("Antes del delete");
             //Call to the recursive delete method
             this.root = delete(this.root, actividad.replaceAll("\\s", "").toUpperCase(), prioridad);
-            System.out.println("Después del delete");
             this.bts.deleteNode(actividad);
-            System.out.println("Después del segundo delete");
             this.bts.size();
             return true;
         }
@@ -71,7 +68,6 @@ public class BinaryTree {
             current.setRight(delete(current.getRight(), actividad, prioridad));
         }else{
             //Once it's on the same priority, look for the activity
-            System.out.println("Delete 2 COMPLEJO mismo nivel");
             if (actividad.compareTo(current.getActividad().
                     replaceAll("\\s", "").toUpperCase()) < 0)  {
                 
@@ -83,7 +79,6 @@ public class BinaryTree {
                 current.setRight(delete(current.getRight(), actividad, prioridad));
             }else{
                 //It's on the same priority and activity
-                System.out.println("Delete 2 COMPLEJO misma actividad");
                 //Check if it is a leaf or the root without alone
                 if(current.getLeft() == null && current.getRight() == null) {
                     return null;
@@ -214,11 +209,9 @@ public class BinaryTree {
     public boolean search(String actividad, int prioridad) {
         Node node = search(this.root, actividad.replaceAll("\\s", "").toUpperCase(), prioridad);
         if (node != null) {
-            System.out.println("Encontró el nodo COMPLEJO");
             return true;
         }
         else {
-            System.out.println("nodo COMPLEJO: NULO");
             return false;
         }
     }
@@ -231,20 +224,15 @@ public class BinaryTree {
      * @return 
      */
     private Node search(Node current, String actividad, int prioridad) {
-        System.out.println("Entra a search 2 COMPLEJO: " + actividad);
         if(prioridad < current.getPrioridad()){
             return search(current.getLeft(), actividad, prioridad);
         }else if (prioridad > current.getPrioridad()){
             return search(current.getRight(), actividad, prioridad);
         } else {
-            System.out.println("Entra a else search 2 COMPLEJO: " + actividad);
             if(current != null){
-                System.out.println("Entra a else search 2 COMPLEJO: " + current.getActividad().replaceAll("\\s", "").
-                    toUpperCase());
             }
             if (current == null || current.getActividad().replaceAll("\\s", "").
                     toUpperCase().compareTo(actividad) == 0) {
-                System.out.println("Encontró el nodo: COMPLEJO");
                 return current;
             }
             
