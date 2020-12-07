@@ -196,7 +196,7 @@ public class BinaryTree {
             }else {
                 //It found a node with the same keys, so it 
                 //returns current
-                current = null;
+                //This never happen because of the restriction at the beginning
                 return current;
             }
             

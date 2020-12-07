@@ -144,7 +144,6 @@ public class BinaryTreeSimple {
                 current.setRight(insert(current.getRight(), actividad));
                 
             }else {
-                current = null;
                 return current;
             }
             
