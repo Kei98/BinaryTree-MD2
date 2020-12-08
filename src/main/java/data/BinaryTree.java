@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class BinaryTree {
     private ArrayList<String> orden;
-    Node root;
-    BinaryTreeSimple bts;
+    private Node root;
+    private BinaryTreeSimple bts;
     
     public BinaryTree()
     {
@@ -229,8 +229,6 @@ public class BinaryTree {
         }else if (prioridad > current.getPrioridad()){
             return search(current.getRight(), actividad, prioridad);
         } else {
-            if(current != null){
-            }
             if (current == null || current.getActividad().replaceAll("\\s", "").
                     toUpperCase().compareTo(actividad) == 0) {
                 return current;
